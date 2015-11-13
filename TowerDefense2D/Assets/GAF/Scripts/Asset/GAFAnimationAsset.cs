@@ -8,7 +8,6 @@
  */
 
 using UnityEngine;
-
 using GAFInternal.Assets;
 
 namespace GAF.Assets
