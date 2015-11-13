@@ -3,10 +3,10 @@ using System.Collections;
 
 public class ShootingScript : MonoBehaviour
 {
-    public GameObject bullet;
-    public Transform ShotSpawner;
-    private float fireRate = 0.1f;
-    private float nextFire = 0.1f;
+    [SerializeField] private GameObject _bullet;
+    [SerializeField] private Transform _ShotSpawner;
+    private float _fireRate = 0.1f;
+    private float _nextFire = 0.1f;
 
     TowerTarget towerTarget;
 
@@ -24,10 +24,10 @@ public class ShootingScript : MonoBehaviour
     {
         if (towerTarget.GetTarget())
         {
-            if (Time.time > nextFire)
+            if (Time.time > _nextFire)
             {
-                nextFire = Time.time + fireRate;
-                Instantiate(bullet, ShotSpawner.position, ShotSpawner.rotation);
+                _nextFire = Time.time + _fireRate;
+                Instantiate(_bullet, _ShotSpawner.position, _ShotSpawner.rotation);
             }
         }
     }
