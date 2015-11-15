@@ -5,8 +5,8 @@ public class ShootingScript : MonoBehaviour
 {
     [SerializeField] private GameObject _bullet;
     [SerializeField] private Transform _ShotSpawner;
-    private float _fireRate = 0.1f;
-    private float _nextFire = 0.1f;
+	[SerializeField] private float _fireRate = 0.1f;
+	[SerializeField] private float _nextFire = 0.1f;
 
     TowerTarget towerTarget;
 

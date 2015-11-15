@@ -20,6 +20,7 @@ public class TowerTarget : MonoBehaviour
         Collider2D col = Physics2D.OverlapCircle(this.transform.position, _targettingRadius, _layerMask);
         if (col)
         {
+			Debug.Log(col);
             _target = col.gameObject;
         }
             
