@@ -28,14 +28,14 @@ public class CameraBehaviour : MonoBehaviour {
 	{
 		if (Input.mousePosition.x <= _ScreenWidth - _ScreenWidth) 
 		{
-			Debug.Log ("hey");
+			//Debug.Log ("hey");
 			_CameraPos.x -= _speed;
 
 		}
 	
 		if(Input.mousePosition.x >= _ScreenWidth)
 		{
-			Debug.Log("hey2");
+			//Debug.Log("hey2");
 			_CameraPos.x += _speed;
 
 		}

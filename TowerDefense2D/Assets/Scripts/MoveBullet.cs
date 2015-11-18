@@ -22,8 +22,6 @@ public class MoveBullet : MonoBehaviour
 		if (maxLifeTime == lifeTime) 
 		{
 			Destroy(this.gameObject);
-		
-		
 		}
 	}
 
