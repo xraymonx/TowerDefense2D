@@ -3,13 +3,11 @@ using System.Collections;
 
 public class TowerTarget : MonoBehaviour
 {
-    [SerializeField]
     private GameObject _target;
-    [SerializeField]
-    private float _targettingRadius;
-
+    [SerializeField]private float _targettingRadius;
     private int _layerMask;
-
+	private Quaternion rotation;
+	private int _turnSpeed = 10;
     void Start()
     {
         _layerMask = LayerMask.GetMask("Enemy");
@@ -17,18 +15,19 @@ public class TowerTarget : MonoBehaviour
 
     void Update()
     {
+
         Collider2D col = Physics2D.OverlapCircle(this.transform.position, _targettingRadius, _layerMask);
-        if (col)
+
+		if (col)
         {
-			Debug.Log(col);
+
             _target = col.gameObject;
+			Rotating();
         }
-            
         else
         {
             _target = null;
         }
-            
     }
 
     public GameObject GetTarget()
@@ -38,7 +37,21 @@ public class TowerTarget : MonoBehaviour
 
     void OnDrawGizmos()
     {
-        Gizmos.color = Color.white;
+		Gizmos.color = Color.white;
         Gizmos.DrawWireSphere(this.transform.position, _targettingRadius);
     }
+
+	void Rotating()
+	{
+		Vector3 direction = _target.transform.position - this.transform.position;
+		float angle = Mathf.Atan2 (direction.x, direction.z) * Mathf.Rad2Deg;
+		rotation = Quaternion.Lerp (this.transform.rotation, Quaternion.Euler (0, angle, 0), Time.time * _turnSpeed);
+		this.transform.rotation = rotation;
+
+		Debug.Log ("angle: " + angle);
+		//Debug.Log ("rotation: " + rotation);
+		//Debug.Log (angle);
+	}
+
+
 }
