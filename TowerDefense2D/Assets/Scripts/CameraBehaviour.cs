@@ -28,30 +28,20 @@ public class CameraBehaviour : MonoBehaviour {
 	{
 		if (Input.mousePosition.x <= _ScreenWidth - _ScreenWidth) 
 		{
-<<<<<<< HEAD
 			if(_CameraPos.x > -12.5)
 			{
 				_CameraPos.x -= _speed;
 			}
-=======
-			//Debug.Log ("hey");
-			_CameraPos.x -= _speed;
 
->>>>>>> 89517bd9842bcb7f29d45dc570c1ae698e452ccb
 		}
 	
 		if(Input.mousePosition.x >= _ScreenWidth)
 		{
-<<<<<<< HEAD
-			if(_CameraPos.x < 0.2)
+			if(_CameraPos.x < 0.1)
 			{
 				_CameraPos.x += _speed;
 			}
-=======
-			//Debug.Log("hey2");
-			_CameraPos.x += _speed;
 
->>>>>>> 89517bd9842bcb7f29d45dc570c1ae698e452ccb
 		}
 
 	}

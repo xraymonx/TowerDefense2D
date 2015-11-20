@@ -48,9 +48,6 @@ public class TowerTarget : MonoBehaviour
 		rotation = Quaternion.Lerp (this.transform.rotation, Quaternion.Euler (0, angle, 0), Time.time * _turnSpeed);
 		this.transform.rotation = rotation;
 
-		Debug.Log ("angle: " + angle);
-		//Debug.Log ("rotation: " + rotation);
-		//Debug.Log (angle);
 	}
 
 
