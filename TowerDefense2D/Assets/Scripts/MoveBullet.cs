@@ -15,18 +15,15 @@ public class MoveBullet : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-		maxLifeTime = (maxLifeTime * Time.deltaTime);
+		//maxLifeTime = (maxLifeTime * Time.deltaTime);
 
 		transform.Translate(new Vector3(0, 0, 1) * speed * Time.deltaTime);
 
 		if (maxLifeTime == lifeTime) 
 		{
-			Destroy(this.gameObject);
+			//Destroy(this.gameObject);
+			//Debug.Log(lifeTime
 		}
 	}
 
-    void OnCollisionEnter(Collision coll)
-    {
-        Destroy(this.gameObject);
-    }
 }
