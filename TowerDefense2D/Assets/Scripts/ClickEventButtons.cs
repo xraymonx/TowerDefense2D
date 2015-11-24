@@ -14,9 +14,6 @@ public class ClickEventButtons : MonoBehaviour {
 	{
 		_clicked = true;
 		_placer = Instantiate (objectToSpawn, Vector3.zero, Quaternion.identity) as GameObject;
-		//Debug.Log ("eerste klik");
-
-
 
 	}
 
@@ -37,21 +34,13 @@ public class ClickEventButtons : MonoBehaviour {
 				if (Physics.Raycast (ray, out hit)) {
 					if (hit.transform.tag == "TurretField") {
 						Destroy (hit.transform.gameObject);
-						//Debug.Log ("hier komt hij neer");
-						
-						
 					}
 					else
 					{
-						Destroy(_placer);
-						
+						Destroy(_placer);	
 					}
 				}
-
-
 				_clicked = false;
-				//Debug.Log ("Klik reset");
-
 
 			}
 

@@ -22,7 +22,7 @@ public class EnemyScript : MonoBehaviour {
 
 		if (col) 
 		{
-			Debug.Log("AUW SHIT!");
+
 			Destroy(col.gameObject);
 			decreaseHP();
 		}
@@ -39,12 +39,10 @@ public class EnemyScript : MonoBehaviour {
 	void decreaseHP()
 	{
 		_health = _health - damageTake;
-		_hpScale.x = (_health/200);
-	
-		Debug.Log (_hpScale);
+		_hpScale.x = (_health / 200);
+
 		if (_health <= 0) 
 		{
-			Debug.Log("ik ben dood, ownee..");
 			Destroy(this.gameObject);
 		}
 
