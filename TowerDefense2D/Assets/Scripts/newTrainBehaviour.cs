@@ -3,17 +3,24 @@ using System.Collections;
 
 public class newTrainBehaviour : MonoBehaviour {
 
-	[SerializeField] private float maxSpeed = 5;
+	[SerializeField] private float maxSpeed = 10;
 	[SerializeField] private float mass = 5;
 	[SerializeField] private GameObject[] _wayPoints;
+
 	private int _WaypointCounter = 0;
 
 	private Rigidbody _rigidbody3D;
 
 	private Vector3 _target;
+	private GameObject resourceGameObject;
+	ResourceScript resourceScript;
+
 	// Use this for initialization
 	void Start () {
-	
+		resourceGameObject = GameObject.FindWithTag ("Resource");
+		resourceScript = resourceGameObject.GetComponent<ResourceScript>();
+
+
 		_rigidbody3D = GetComponent<Rigidbody> ();
 	}
 	void FixedUpdate()
@@ -35,8 +42,6 @@ public class newTrainBehaviour : MonoBehaviour {
 		Vector3 desiredStep = _target - _rigidbody3D.position;
 
 		float distanceToWaypoint = desiredStep.magnitude;
-		Debug.Log (distanceToWaypoint);
-
 
 		desiredStep.Normalize ();
 
@@ -61,6 +66,12 @@ public class newTrainBehaviour : MonoBehaviour {
 				Destroy(this.gameObject);
 
 			}
+			if (_WaypointCounter == 2) 
+			{
+				resourceScript.AddingResources();
+				Debug.Log("ik ben der");
+			}
 		}
+
 	}
 }
