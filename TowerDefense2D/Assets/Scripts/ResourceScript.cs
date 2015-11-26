@@ -6,7 +6,7 @@ public class ResourceScript : MonoBehaviour {
 
 	[SerializeField] private int _resources;
 	[SerializeField] private Text textField;
-
+	[SerializeField] private int _resourceGained;
 	public bool checkResources = false;
 
 	// Use this for initialization
@@ -22,7 +22,7 @@ public class ResourceScript : MonoBehaviour {
 
 	public void AddingResources()
 	{
-		_resources = _resources + 100;
+		_resources = _resources + _resourceGained;
 		UpdateUI();
 
 	}

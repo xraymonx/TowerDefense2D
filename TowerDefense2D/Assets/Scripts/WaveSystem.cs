@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 [System.Serializable] public class WaveInfo
 {
@@ -9,6 +10,7 @@ using System.Collections.Generic;
 
 
 public class WaveSystem : MonoBehaviour {
+	[SerializeField] Text _textField; 
 
 	public List<GameObject> waveInfo;
 
@@ -22,9 +24,11 @@ public class WaveSystem : MonoBehaviour {
 	{
 		if (waveIsActive == false)
 		{
+			Debug.Log ("#1 Wavesystem"); 
 			waveIsActive = true;
-			GameObject.Find("EnemySpawner").GetComponent<EnemySpawner>().SpawnEnemy(waves[_waveCounter].waveInfo);
+			GameObject.Find("WaveSpawner").GetComponent<EnemySpawner>().SpawnEnemy(waves[_waveCounter].waveInfo);
 			_waveCounter++;
+			_textField.text = ""+ _waveCounter;
 		}
 	}
 

@@ -69,7 +69,6 @@ public class newTrainBehaviour : MonoBehaviour {
 			if (_WaypointCounter == 2) 
 			{
 				resourceScript.AddingResources();
-				Debug.Log("ik ben der");
 			}
 		}
 
