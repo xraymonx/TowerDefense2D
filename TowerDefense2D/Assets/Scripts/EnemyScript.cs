@@ -47,4 +47,9 @@ public class EnemyScript : MonoBehaviour {
 		}
 
 	}
+
+	void OnDestroy()
+	{
+		GameObject.Find("EnemySpawner").GetComponent<EnemySpawner>().enemiesSpawned.Remove(this.gameObject);
+	}
 }
