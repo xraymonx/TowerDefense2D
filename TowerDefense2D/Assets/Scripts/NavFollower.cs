@@ -19,8 +19,6 @@ public class NavFollower : MonoBehaviour {
 		if(targetPos)
 		{
 			_navComponent.SetDestination(targetPos.position);
-
-
 		}
 
 	
